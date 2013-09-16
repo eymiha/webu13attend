@@ -1,0 +1,44 @@
+<head>
+  <title>Web Unleashed 2013 - Attendance</title>
+</head>
+
+<body>
+  <div class='main'>
+    {{> gateway}}
+    {{#if currentUser}}
+      {{> attendees}}
+    {{else}}
+      {{> welcome}}
+    {{/if}}
+  </div>
+</body>
+
+<template name="gateway">
+  <img class='gateway' src='images/webu13.png'>    
+</template>
+
+<template name="login">
+  <span class='login'>
+  	{{loginButtons}}
+  </span>
+</template>
+
+<template name="logout">
+  <div class='logout'>Sign off</a>
+</template>
+
+<template name="welcome">
+  <h2>Welcome to the Show! {{> login}}</h2>
+</template>
+
+<template name="attendees">
+  <h2>Greet the other attendees!</h2>
+  {{#each attendees}}
+  	{{> attendee}}
+  {{/each}}
+  {{> logout}}
+</template>
+
+<template name="attendee">
+  <p class="attendee {{me}}">{{email}}</p>
+</template>	

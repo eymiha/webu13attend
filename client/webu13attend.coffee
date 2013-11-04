@@ -9,7 +9,7 @@ Template.attendee.helpers
   		"another"
 
 Template.logout.events
-	'click .logout': -> Meteor.logout()
+	'click, tap .logout': -> Meteor.logout()
 
 Template.gateway.events
 	'click .gateway': -> Meteor.call('clearAttendees')
